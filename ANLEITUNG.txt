@@ -1,0 +1,16 @@
+Add-MpPreference -AttackSurfaceReductionOnlyExclusions "C:\Users\arnold\Django\"
+
+cd C:\Users\arnold\Django\Training_Day1\
+uv init notes_project
+cd .\notes_project\
+uv add django==5.2
+uv run django-admin
+uv run django-admin startproject mynotes
+cd .\mynotes\
+uv run manage.py runserver
+uv run manage.py startapp notes_app
+
+
+uv run manage.py makemigrations notes_app
+uv run manage.py sqlmigrate notes_app 0001
+uv run manage.py migrate notes_app
